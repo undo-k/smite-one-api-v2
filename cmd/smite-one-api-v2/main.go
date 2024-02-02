@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/go-chi/chi"
+	"github.com/go-chi/chi/v5"
 	_ "github.com/lib/pq"
 	"github.com/rs/cors"
 	log "github.com/sirupsen/logrus"

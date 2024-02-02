@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"github.com/go-chi/chi"
-	chimiddle "github.com/go-chi/chi/middleware"
+	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
 	"github.com/undo-k/smite-one-api-v2/internal/config"
 )
 
@@ -21,7 +21,7 @@ func NewRepo(a *config.AppConfig) *Repository {
 func Handler(router *chi.Mux, a *config.AppConfig) {
 	Repo = NewRepo(a)
 
-	router.Use(chimiddle.StripSlashes)
+	router.Use(middleware.StripSlashes)
 
 	router.Get("/api/v2/gods", Repo.GetGods)
 	router.Get("/api/v2/gods/{godId}", Repo.GetGodById)
